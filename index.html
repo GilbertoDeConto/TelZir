@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Antecipação</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <link rel="stylesheet" type="text/css" href="css.css" />
+    <script type="text/javascript" src="antecipacao.js"></script>
+    <script type="text/javascript" src="js.js"></script>
+</head>
+
+<body>
+    <div class="container flex ">
+        <div class="left flex-item-1">
+            <h2>Simule sua antecipação</h2>
+            <form>
+                <label>Informe o valor da venda*</label>
+                <input type="text" id="valor" required onkeyup="calcular(); k(this)">
+
+                <label>Em quantas parcelas*</label>
+                <input type="number" id="parcelas" required onkeyup="calcular()">
+                <span>Máximo de 12 parcelas</span>
+
+                <label>Informe o percentual de MDR*</label>
+                <input type="number" id="mdr" required onkeyup="calcular()">
+            </form>
+        </div>
+        <div class="right flex-item-2">
+            <h4>VOCÊ RECEBERÁ</h4>
+            <hr>
+            <label>Amanhã: <strong id="dia">R$ 0,00</strong></label>
+            <label>Em 15 dias: <strong id="quinze">R$ 0,00</strong></label>
+            <label>Em 30 dias: <strong id="trinta">R$ 0,00</strong></label>
+            <label>Em 90 dias: <strong id="noventa">R$ 0,00</strong></label>
+        </div>
+    </div>
+</body>
+
+</html>
