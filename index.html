@@ -2,41 +2,80 @@
 <html lang="pt-br">
 
 <head>
-    <title>Antecipação</title>
+    <title>Telzir</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="HandheldFriendly" content="true">
-    <link rel="stylesheet" type="text/css" href="css.css" />
-    <script type="text/javascript" src="antecipacao.js"></script>
-    <script type="text/javascript" src="js.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/css.css" />
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 </head>
 
 <body>
-    <div class="container flex ">
-        <div class="left flex-item-1">
-            <h2>Simule sua antecipação</h2>
+    <div class="container">
+        <div class="container row">
+            <h2>TELZIR</h2>
             <form>
-                <label>Informe o valor da venda*</label>
-                <input type="text" id="valor" required onkeyup="calcular(); k(this)">
-
-                <label>Em quantas parcelas*</label>
-                <input type="number" id="parcelas" required onkeyup="calcular()">
-                <span>Máximo de 12 parcelas</span>
-
-                <label>Informe o percentual de MDR*</label>
-                <input type="number" id="mdr" required onkeyup="calcular()">
+              <div class="input-field col s12">
+                <select id="origem" onchange="atualizarCampo()">
+                  <option value="" disabled selected>Escolha o DDD de origem</option>
+                  <option value="11">011</option>
+                  <option value="16">016</option>
+                  <option value="17">017</option>
+                  <option value="18">018</option>
+                </select>
+              </div>
+              
+              <div class="input-field col s12">
+                <select id="destino" onchange="atualizarCampo()">
+                  <option value="" disabled selected>Escolha o DDD de destino</option>
+                  <option value="11">011</option>
+                  <option value="16">016</option>
+                  <option value="17">017</option>
+                  <option value="18">018</option>
+                </select>
+              </div>
+      
+              <div class="input-field col s12">Tempo da ligação:
+                <p><input placeholder="Digite um número.." id="tempo" onkeyup="atualizarCampo()"></p>
+              </div>
             </form>
         </div>
-        <div class="right flex-item-2">
-            <h4>VOCÊ RECEBERÁ</h4>
-            <hr>
-            <label>Amanhã: <strong id="dia">R$ 0,00</strong></label>
-            <label>Em 15 dias: <strong id="quinze">R$ 0,00</strong></label>
-            <label>Em 30 dias: <strong id="trinta">R$ 0,00</strong></label>
-            <label>Em 90 dias: <strong id="noventa">R$ 0,00</strong></label>
-        </div>
+        <div class="container">
+          <table class="highlight">
+            <thead>
+              <tr>
+                  <th>Plano FaleMais</th>
+                  <th>Com FaleMais</th>
+                  <th>Sem FaleMais</th>
+              </tr>
+            </thead>
+    
+            <tbody>
+              <tr>
+                <td>FaleMais 30</td>
+                <td id="trintaPlano">R$ 0,00</td>
+                <td id="trintaNormal">R$ 0,00</td>
+              </tr>
+              <tr>
+                <td>FaleMais 60</td>
+                <td id="sessentaPlano">R$ 0,00</td>
+                <td id="sessentaNormal">R$ 0,00</td>
+              </tr>
+              <tr>
+                <td>FaleMais 120</td>
+                <td id="centoVintePlano">R$ 0,00</td>
+                <td id="centoVinteNormal">R$ 0,00</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
     </div>
+
+    <script type="text/javascript" src="js/plano.js"></script>
+    <script type="text/javascript" src="js/js.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 
 </html>
